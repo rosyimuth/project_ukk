@@ -13,6 +13,7 @@ class SiswaSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');  // matikan foreign key checks
         // Kosongkan tabel siswa dulu
         DB::table('siswa')->truncate();
         $siswa = [
@@ -105,5 +106,6 @@ class SiswaSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
+         DB::statement('SET FOREIGN_KEY_CHECKS=1;');  // aktifkan lagi foreign key checks
     }
 }

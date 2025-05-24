@@ -15,21 +15,21 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 dark:bg-[#121212] dark:text-gray-100">
+<body class="bg-white text-gray-800">
 
     <!-- Navbar -->
-    <header class="w-full py-4 px-6 lg:px-12 flex justify-between items-center shadow-sm bg-white/80 dark:bg-[#121212]/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+    <header class="w-full py-4 px-6 lg:px-12 flex justify-between items-center shadow-sm bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <!-- Logo -->
-        <div class="text-xl font-bold text-blue-600 dark:text-blue-400">SIMPEL SIJA</div>
+        <div class="text-xl font-bold text-blue-600">SIMPEL SIJA</div>
 
         <!-- Navigasi Utama -->
-        <nav class="hidden md:flex items-center space-x-6 text-sm text-gray-700 dark:text-gray-200">
-            <a href="#fitur" class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 font-medium">Fitur</a>
-            <a href="#mengapa" class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 font-medium">Mengapa Kami</a>
-            <a href="#cara" class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 font-medium">Cara Kerja</a>
-            <a href="#mitra" class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 font-medium">Mitra</a>
-            <a href="#testimoni" class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 font-medium">Testimoni</a>
-            <a href="#kontak" class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 font-medium">Kontak</a>
+        <nav class="hidden md:flex items-center space-x-6 text-sm text-gray-700">
+            <a href="#fitur" class="hover:text-blue-600 transition duration-200 font-medium">Fitur</a>
+            <a href="#mengapa" class="hover:text-blue-600 transition duration-200 font-medium">Mengapa Kami</a>
+            <a href="#cara" class="hover:text-blue-600 transition duration-200 font-medium">Cara Kerja</a>
+            <a href="#mitra" class="hover:text-blue-600 transition duration-200 font-medium">Mitra</a>
+            <a href="#testimoni" class="hover:text-blue-600 transition duration-200 font-medium">Testimoni</a>
+            <a href="#kontak" class="hover:text-blue-600 transition duration-200 font-medium">Kontak</a>
 
              @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
@@ -62,21 +62,21 @@
     </header>
 
     <!-- Hero -->
-    <section class="bg-gradient-to-r from-blue-50 via-white to-blue-100 py-24 dark:from-blue-900 dark:via-gray-900 dark:to-blue-950">
+    <section class="bg-gradient-to-r from-blue-50 via-white to-blue-100 py-24">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">Solusi Cerdas Penempatan PKL Siswa</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Temukan dan kelola tempat magang dengan mudah menggunakan <strong>SIMPEL SIJA</strong>, platform digital terpercaya untuk siswa dan guru pembimbing.</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Solusi Cerdas Penempatan PKL Siswa</h2>
+                <p class="text-lg text-gray-600 mb-6">Temukan dan kelola tempat magang dengan mudah menggunakan <strong>SIMPEL SIJA</strong>, platform digital terpercaya untuk siswa dan guru pembimbing.</p>
                 <a href="{{ route('login') }}" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-md shadow hover:bg-blue-700 transition">Mulai Sekarang</a>
             </div>
             <div class="hidden md:block">
-                <img src="https://illustrations.popsy.co/sky/home-office.svg" alt="Ilustrasi PKL" class="w-full h-auto" />
+                <img src="https://illustrations.popsy.co/sky/work-from-home.svg" alt="Ilustrasi PKL" class="w-full h-auto" />
             </div>
         </div>
     </section>
 
     <!-- Pengenalan Aplikasi -->
-    <section class="relative py-24 bg-gradient-to-br from-blue-100 via-white to-blue-50 dark:from-gray-900 dark:via-[#121212] dark:to-blue-950">
+    <section class="relative py-24 bg-gradient-to-br from-blue-100 via-white to-blue-50">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <!-- Gambar Ilustrasi -->
             <div class="order-2 md:order-1">
@@ -85,13 +85,13 @@
 
             <!-- Konten Teks -->
             <div class="order-1 md:order-2">
-                <h3 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-white">
-                    Apa Itu <span class="text-blue-600 dark:text-blue-400">SIMPEL SIJA</span>?
+                <h3 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+                    Apa Itu <span class="text-blue-600">SIMPEL SIJA</span>?
                 </h3>
-                <p class="text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                <p class="text-lg text-gray-600 mb-4 leading-relaxed">
                     <strong>SIMPEL SIJA</strong> adalah platform digital yang dirancang khusus untuk mempermudah proses penempatan <em>Praktik Kerja Lapangan (PKL)</em> bagi siswa SMK, guru pembimbing, dan mitra industri.
                 </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 mb-6">
+                <ul class="list-disc list-inside text-gray-700 mb-6">
                     <li>Terhubung langsung dengan banyak mitra industri nasional</li>
                     <li>Dashboard intuitif untuk pemantauan dan pengajuan PKL</li>
                     <li>Efisiensi komunikasi antara siswa, guru, dan perusahaan</li>
@@ -105,19 +105,19 @@
 
 
     <!-- Fitur -->
-    <section id="fitur" class="py-20 bg-white dark:bg-[#1a1a1a]">
+    <section id="fitur" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-12 text-gray-800 dark:text-white">Fitur Unggulan</h3>
+            <h3 class="text-3xl font-bold mb-12 text-gray-800">Fitur Unggulan</h3>
             <div class="grid md:grid-cols-3 gap-12">
                 @foreach([
                     ['img' => 'group.png', 'title' => 'Manajemen PKL', 'desc' => 'Pengajuan, persetujuan, dan pelaporan PKL semua dalam satu platform.'],
                     ['img' => 'task.png', 'title' => 'Laporan Otomatis', 'desc' => 'Laporan harian dan akhir magang dibuat secara otomatis dan rapi.'],
                     ['img' => 'support.png', 'title' => 'Komunikasi Real-time', 'desc' => 'Diskusi langsung dengan pembimbing dan mitra industri secara online.'],
                 ] as $fitur)
-                <div class="p-6 border rounded-lg hover:shadow-lg transition dark:border-gray-700">
+                <div class="p-6 border rounded-lg hover:shadow-lg transition">
                     <img src="https://img.icons8.com/fluency/96/{{ $fitur['img'] }}" class="mx-auto mb-4" />
-                    <h4 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{{ $fitur['title'] }}</h4>
-                    <p class="text-gray-600 dark:text-gray-300">{{ $fitur['desc'] }}</p>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">{{ $fitur['title'] }}</h4>
+                    <p class="text-gray-600">{{ $fitur['desc'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -125,9 +125,9 @@
     </section>
 
     <!-- Mengapa Kami -->
-    <section id="mengapa" class="bg-blue-50 dark:bg-[#0f172a] py-20">
+    <section id="mengapa" class="bg-blue-50 py-20">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-10 text-gray-800 dark:text-white">Mengapa Memilih SIMPEL SIJA?</h3>
+            <h3 class="text-3xl font-bold mb-10 text-gray-800">Mengapa Memilih SIMPEL SIJA?</h3>
             <div class="grid md:grid-cols-4 gap-8 text-left">
                 @foreach([
                     ['title' => '✅ Terintegrasi', 'desc' => 'Semua proses PKL dari awal hingga akhir berada dalam satu platform.'],
@@ -136,8 +136,8 @@
                     ['title' => '📱 Responsif', 'desc' => 'Akses dari perangkat apapun: desktop, tablet, hingga ponsel.']
                 ] as $item)
                 <div>
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-300">{{ $item['title'] }}</h4>
-                    <p class="text-gray-600 dark:text-gray-300">{{ $item['desc'] }}</p>
+                    <h4 class="text-xl font-semibold mb-2 text-blue-700">{{ $item['title'] }}</h4>
+                    <p class="text-gray-600">{{ $item['desc'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -145,9 +145,9 @@
     </section>
 
     <!-- Cara Kerja -->
-    <section id="cara" class="py-20 bg-white dark:bg-[#1a1a1a]">
+    <section id="cara" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Bagaimana Cara Kerja SIMPEL SIJA?</h3>
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Bagaimana Cara Kerja SIMPEL SIJA?</h3>
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 @foreach([
                     'Autentikasi Siswa' => 'Siswa login, melengkapi profil, dan minat industri.',
@@ -157,8 +157,8 @@
                 ] as $title => $desc)
                 <div>
                     <div class="text-blue-600 text-4xl font-bold mb-2">{{ $loop->iteration }}</div>
-                    <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">{{ $title }}</h4>
-                    <p class="text-gray-600 dark:text-gray-300">{{ $desc }}</p>
+                    <h4 class="font-semibold text-lg mb-2 text-gray-800">{{ $title }}</h4>
+                    <p class="text-gray-600">{{ $desc }}</p>
                 </div>
                 @endforeach
             </div>
@@ -166,9 +166,9 @@
     </section>
 
     <!-- Mitra -->
-    <section id="mitra" class="bg-blue-50 dark:bg-[#0f172a] py-20">
+    <section id="mitra" class="bg-blue-50 py-20">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-10 text-gray-800 dark:text-white">Instansi Mitra Kami</h3>
+            <h3 class="text-3xl font-bold mb-10 text-gray-800">Instansi Mitra Kami</h3>
             <div class="swiper mitra-swiper">
                 <div class="swiper-wrapper">
                     @foreach([
@@ -194,9 +194,9 @@
     </section>
 
     <!-- Testimoni -->
-    <section id="testimoni" class="bg-white dark:bg-[#1a1a1a] py-20">
+    <section id="testimoni" class="bg-white py-20">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-10 text-gray-800 dark:text-white">Apa Kata Mereka</h3>
+            <h3 class="text-3xl font-bold mb-10 text-gray-800">Apa Kata Mereka</h3>
             <div class="swiper testimoni-swiper">
                 <div class="swiper-wrapper">
                     @foreach([
@@ -212,9 +212,9 @@
                         ['"Data siswa mudah diakses dan dilaporkan. Sangat membantu tugas administrasi kami."', 'Bu Ratna, Guru Pembimbing']
                     ] as [$msg, $author])
                     <div class="swiper-slide">
-                        <div class="bg-blue-50 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition h-full">
-                            <p class="italic text-gray-700 dark:text-gray-300">{{ $msg }}</p>
-                            <h5 class="mt-4 font-semibold text-blue-600 dark:text-blue-400">– {{ $author }}</h5>
+                        <div class="bg-blue-50 p-6 rounded shadow hover:shadow-lg transition h-full">
+                            <p class="italic text-gray-700">{{ $msg }}</p>
+                            <h5 class="mt-4 font-semibold text-blue-600">– {{ $author }}</h5>
                         </div>
                     </div>
                     @endforeach

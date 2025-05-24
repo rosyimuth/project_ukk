@@ -14,6 +14,7 @@ class IndustriSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');  // matikan foreign key checks
         // Kosongkan tabel guru dulu
         DB::table('industri')->truncate();
 
@@ -53,5 +54,6 @@ class IndustriSeeder extends Seeder
         ];
 
         Industri::insert($industri);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');  // aktifkan lagi foreign key checks
     }
 }

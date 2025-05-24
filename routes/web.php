@@ -5,27 +5,23 @@ use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Appearance;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\PKL\Create as PKLCreate;
+use App\Livewire\Pkl\Index as PklIndex;
+use App\Livewire\Pkl\Create as PklCreate;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified', 'role:siswa'])
-    ->name('dashboard');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+    'check.roles',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::get('/pkl', Index::class)
-    ->middleware(['auth', 'verified', 'role:siswa'])
-    ->name('pkl');
-
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-    // Route::get('/pkl/create', PKLCreate::class)->name('pkl.create');
-
-    Route::get('settings/profile', Profile::class)->name('settings.profile');
-    Route::get('settings/password', Password::class)->name('settings.password');
-    Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
+    Route::get('/pkl', PklIndex::class)->name('pkl.index');
+    Route::get('/pkl/create', PklCreate::class)->name('pkl.create');
 });
-
-require __DIR__.'/auth.php';

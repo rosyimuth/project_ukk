@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 
-class CheckUserRoles
+class check_user_roles
 {
     /**
      * Handle an incoming request.
@@ -21,7 +21,7 @@ class CheckUserRoles
          /** @var User $user */
         $user = Auth::user();
 
-        if (!Auth::check() || !$user->hasAnyRole(['super_admin', 'Siswa', 'Guru'])) {
+        if (!Auth::check() || !$user->hasAnyRole(['super_admin', 'siswa', 'guru'])) {
             abort(403, 'Anda belum punya akses. Silakan hubungi admin :)');
         }
 

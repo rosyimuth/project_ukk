@@ -14,6 +14,7 @@ class GuruSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');  // matikan foreign key checks
         // Kosongkan tabel guru dulu
         DB::table('guru')->truncate();
 
@@ -69,5 +70,6 @@ class GuruSeeder extends Seeder
         ];
 
         Guru::insert($guru);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');  // aktifkan lagi foreign key checks
     }
 }
