@@ -17,23 +17,24 @@
                 @endif
 
                 {{-- Tombol dan Search --}}
-                <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-2">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
                     <button wire:click="redirectToCreate"
-                        class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded">
+                        class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-md font-semibold rounded">
                         Buat Lapor PKL
                     </button>
 
-                    <div class="relative md:w-72">
-                        <input type="text" wire:model="search" placeholder="Cari..."
-                            class="w-full border border-gray-300 rounded-md pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring focus:border-blue-400">
-                        <i class="bi bi-search absolute"></i>
+                    <div class="relative md:w-64">
+                        <input type="text" 
+                    wire:model.live.300ms="search" 
+                    placeholder="Search..." 
+                    class="border border-gray-300 rounded px-6 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
                     </div>
                 </div>
 
                 {{-- Tabel PKL --}}
                 <table class="table-fixed w-full text-sm">
                     <thead>
-                        <tr class="bg-gray-100 text-left">
+                        <tr class="bg-gray-200 text-left">
                             <th class="px-4 py-2 w-1/6">Nama Siswa</th>
                             <th class="px-4 py-2 w-1/6">Industri</th>
                             <th class="px-4 py-2 w-1/6">Guru Pembimbing</th>

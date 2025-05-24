@@ -7,6 +7,7 @@ use App\Livewire\Settings\Appearance;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pkl\Index as PklIndex;
 use App\Livewire\Pkl\Create as PklCreate;
+use App\Livewire\Industri\Index as IndustriIndex;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,4 +25,6 @@ Route::middleware([
 
     Route::get('/pkl', PklIndex::class)->name('pkl.index');
     Route::get('/pkl/create', PklCreate::class)->name('pkl.create');
+
+    Route::get('/industri', IndustriIndex::class)->name('industri.index');
 });
