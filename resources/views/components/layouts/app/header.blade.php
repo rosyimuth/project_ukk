@@ -12,12 +12,12 @@
             </a>
 
             <flux:navbar class="-mb-px max-lg:hidden">
-                <flux:navbar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                <flux:navbar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                 </flux:navbar.item>
-                <flux:navbar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                    {{ __('Dashboard') }}
-                </flux:navbar.item>
+                <flux:navlist.item icon="building-office" :href="route('PKL')" :current="request()->routeIs('PKL')" wire:navigate>
+                {{ __('PKL') }}
+                </flux:navlist.item>
             </flux:navbar>
 
             <flux:spacer />

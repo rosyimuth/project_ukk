@@ -15,6 +15,16 @@ class User extends Authenticatable
     use HasFactory, Notifiable; 
     use HasRoles;
 
+    public function siswa()
+    {
+        return $this->hasOne(Siswa::class, 'email', 'email');
+    }
+
+    public function guru()
+    {
+        return $this->hasOne(Guru::class, 'email', 'email');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
