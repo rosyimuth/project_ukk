@@ -10,9 +10,15 @@
             <div class="bg-white shadow-xl sm:rounded-lg px-6 py-4">
 
                 {{-- Flash Message --}}
-                @if (session()->has('message'))
-                    <div class="bg-teal-100 border-t-4 border-teal-500 text-teal-900 px-4 py-3 rounded mb-4">
-                        <p class="text-sm">{{ session('message') }}</p>
+                @if (session()->has('success'))
+                    <div class="bg-green-100 border-t-4 border-green-500 text-green-900 px-4 py-3 rounded mb-4">
+                        <p class="text-sm">{{ session('success') }}</p>
+                    </div>
+                @endif
+
+                @if (session()->has('error'))
+                    <div class="bg-red-100 border-t-4 border-red-500 text-red-900 px-4 py-3 rounded mb-4">
+                        <p class="text-sm">{{ session('error') }}</p>
                     </div>
                 @endif
 

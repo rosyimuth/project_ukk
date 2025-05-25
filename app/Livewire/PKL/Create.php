@@ -33,7 +33,7 @@ class Create extends Component
     }
 
     public function store()
-{
+    {
     $this->validate([
         'siswa_id' => 'required|integer',
         'industri_id' => 'required|integer',
@@ -74,7 +74,7 @@ class Create extends Component
         session()->flash('error', 'Terjadi kesalahan saat menyimpan data: ' . $e->getMessage());
         return redirect()->route('pkl.index');
     }
-}
+    }
 
 
     public function render()
