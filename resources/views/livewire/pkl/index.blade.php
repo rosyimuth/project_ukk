@@ -46,7 +46,7 @@
                             <th class="px-4 py-2 w-1/6">Guru Pembimbing</th>
                             <th class="px-4 py-2 w-1/6">Tanggal Mulai</th>
                             <th class="px-4 py-2 w-1/6">Tanggal Selesai</th>
-                            <th class="px-4 py-2 w-1/12">Durasi (Hari)</th>
+                            <th class="px-4 py-2 w-1/12">Durasi</th>
                             <th class="px-4 py-2 w-1/12 text-center"></th>
                         </tr>
                     </thead>

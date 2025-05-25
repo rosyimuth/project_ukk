@@ -15,10 +15,13 @@ class Edit extends Component
     public $pkl_id, $siswa_id, $guru_id, $industri_id, $mulai, $selesai;
     public $siswaList, $guruList, $industriList;
     public $bukanSuperAdmin;
+    public $bolehHapus;
+    
 
     public function mount($id)
     {
-        $this->bukanSuperAdmin = Auth::user()->role !== 'super_admin';
+        $this->bukanSuperAdmin = (!Auth::user()->hasRole('super_admin'));
+        $this->bolehHapus = Auth::user()->hasRole('super_admin');
 
         $pkl = Pkl::findOrFail($id);
 
@@ -59,6 +62,28 @@ class Edit extends Component
         } catch (\Throwable $e) {
             DB::rollBack();
             session()->flash('error', 'Kesalahan: '.$e->getMessage());
+        }
+
+        return redirect()->route('pkl.index');
+    }
+
+    // Method destroy untuk hapus data PKL, khusus admin dan super_admin
+    public function destroy()
+    {
+        if (!Auth::user()->hasRole(['super_admin'])) {
+            session()->flash('error', 'Akses ditolak: Anda tidak memiliki hak untuk menghapus data PKL.');
+            return redirect()->route('pkl.index');
+        }
+
+        DB::beginTransaction();
+        try {
+            Pkl::findOrFail($this->pkl_id)->delete();
+
+            DB::commit();
+            session()->flash('success', 'Data PKL berhasil dihapus!');
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            session()->flash('error', 'Kesalahan saat menghapus: ' . $e->getMessage());
         }
 
         return redirect()->route('pkl.index');
