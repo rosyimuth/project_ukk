@@ -47,6 +47,7 @@
                             <th class="px-4 py-2 w-1/6">Tanggal Mulai</th>
                             <th class="px-4 py-2 w-1/6">Tanggal Selesai</th>
                             <th class="px-4 py-2 w-1/12">Durasi (Hari)</th>
+                            <th class="px-4 py-2 w-1/12 text-center"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,6 +60,12 @@
                                 <td class="border px-4 py-2">{{ $item->selesai }}</td>
                                 <td class="border px-4 py-2">
                                     {{ \Carbon\Carbon::parse($item->mulai)->diffInDays($item->selesai) }} hari
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    <a href="{{ route('pkl.show', $item->id) }}"
+                                    class="text-gray-600 hover:text-gray-800">
+                                        Lihat
+                                    </a>
                                 </td>
                             </tr>
                         @empty
@@ -75,7 +82,7 @@
                 <div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-3">
                     <div class="flex items-center gap-2">
                         <label for="perPage" class="text-sm font-medium">Tampilkan</label>
-                        <select id="perPage" wire:model="perPage"
+                        <select id="perPage" wire:model.live="perPage"
                             class="border border-gray-300 rounded-md px-5 py-2 text-sm focus:ring focus:border-blue-300 min-w-[110px]">
                             <option value="5">5 baris</option>
                             <option value="10">10 baris</option>

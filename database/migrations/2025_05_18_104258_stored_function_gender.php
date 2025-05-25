@@ -12,6 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        DB::unprepared('DROP FUNCTION IF EXISTS ketGender');
         DB::unprepared("
             CREATE FUNCTION ketGender(jk CHAR(1)) RETURNS VARCHAR(20)
             DETERMINISTIC

@@ -12,6 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        DB::unprepared('DROP FUNCTION IF EXISTS ketKelas');
         DB::unprepared("
             CREATE FUNCTION ketKelas(kls CHAR(1)) RETURNS VARCHAR(20)
             DETERMINISTIC
