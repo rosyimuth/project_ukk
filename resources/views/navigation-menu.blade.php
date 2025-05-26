@@ -26,16 +26,6 @@
                         {{ __('Info Industri') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('siswa.index') }}" :active="request()->routeIs('siswa.index')">
-                        {{ __('Info Siswa') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('guru.index') }}" :active="request()->routeIs('guru.index')">
-                        {{ __('Info Guru') }}
-                    </x-nav-link>
-                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">

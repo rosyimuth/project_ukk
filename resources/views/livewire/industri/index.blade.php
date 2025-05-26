@@ -34,37 +34,41 @@
                 {{-- Grid Card --}}
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
                     @forelse ($industri as $item)
-                        <div class="bg-white border rounded-lg shadow-md overflow-hidden">
-                            <img src="{{ $item->foto_industri ? asset('storage/' . $item->foto_industri) : 'https://via.placeholder.com/400x200?text=Industri' }}"
-                                alt="{{ $item->nama }}"
-                                class="w-full h-40 object-cover">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col justify-between h-full">
+        {{-- Gambar tetap proporsional --}}
+        <div class="w-full aspect-[16/9] overflow-hidden rounded-t-lg">
+            <img src="{{ $item->foto_industri ? asset('storage/' . $item->foto_industri) : 'https://via.placeholder.com/400x200?text=Industri' }}"
+                alt="{{ $item->nama }}"
+                class="w-full h-full object-cover transition duration-300 hover:scale-105">
+        </div>
 
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold mb-1">{{ $item->nama }}</h3>
-                                <h4 class="text-sm text-gray-600 mb-2">Bidang: {{ $item->bidang_usaha }}</h4>
-                                <h4 class="text-sm text-gray-600 mb-2">Alamat: {{ $item->alamat }}</h4>
-                                <h4 class="text-sm text-gray-600 mb-2">Kontak: {{ $item->kontak }}</h4>
-                                <h4 class="text-sm text-gray-600 mb-2">Email: {{ $item->email }}</h4>
-                                <h4 class="text-sm text-gray-600 mb-2">Website: {{ $item->website }}</h4>
-                            </div>
-                        </div>
-                    @empty
-                        <div class="col-span-full text-center text-gray-500">
-                            Tidak ada data industri ditemukan.
-                        </div>
-                    @endforelse
+        {{-- Konten --}}
+        <div class="p-4 space-y-1 flex-1">
+            <h3 class="text-lg font-semibold text-gray-800">{{ $item->nama }}</h3>
+            <p class="text-sm text-gray-600">Bidang: {{ $item->bidang_usaha }}</p>
+            <p class="text-sm text-gray-600">Alamat: {{ $item->alamat }}</p>
+            <p class="text-sm text-gray-600">Kontak: {{ $item->kontak }}</p>
+            <p class="text-sm text-gray-600">Email: {{ $item->email }}</p>
+            <p class="text-sm text-gray-600">Website: {{ $item->website }}</p>
+        </div>
+    </div>
+@empty
+    <div class="col-span-full text-center text-gray-500">
+        Tidak ada data industri ditemukan.
+    </div>
+@endforelse
+
                 </div>
 
                 {{-- Pagination & PerPage --}}
                 <div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-3">
                     <div class="flex items-center gap-2">
                         <label for="perPage" class="text-sm font-medium">Tampilkan</label>
-                        <select id="perPage" wire:model="perPage"
+                        <select id="perPage" wire:model.live="perPage"
                             class="border border-gray-300 rounded-md px-5 py-2 text-sm focus:ring focus:border-blue-300 min-w-[110px]">
-                            <option value="4">4</option>
-                            <option value="8">8</option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
                             <option value="12">12</option>
-                            <option value="20">20</option>
                         </select>
                     </div>
                     <div>

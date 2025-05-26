@@ -13,6 +13,10 @@ class Siswa extends Model
     public function pkl() {
         return $this->hasMany(PKL::class);
     }
+
+    // Menambahkan atribut virtual ke hasil JSON
+    protected $appends = ['ketGender', 'ketKelas'];
+
     // Accessor untuk keterangan gender
     public function getKetGenderAttribute()
     {

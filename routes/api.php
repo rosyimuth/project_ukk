@@ -1,25 +1,20 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\GuruController;
-use App\Http\Controllers\Api\IndustriController;
-use App\Http\Controllers\Api\PKLController;
-use App\Http\Controllers\Api\SiswaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-Route::post('/login', [AuthController::class, 'login']);
-// Route::post('/register', [AuthController::class, 'register']);
+use App\Http\Controllers\Api\APIGuruController;
+use App\Http\Controllers\Api\APISiswaController;
+use App\Http\Controllers\Api\APIIndustriController;
+use App\Http\Controllers\Api\APIPklController;
+use App\Http\Controllers\Api\APIUserController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum')->group(function () {
-    // Route::apiResource('siswa', SiswaController::class);
-    // Route::apiResource('guru', GuruController::class);
-    // Route::apiResource('industri', IndustriController::class); // Points to the controller
-    // Route::apiResource('pkl', PKLController::class);
-    Route::get('/all-users', [AuthController::class, 'all_users']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-});
+Route::apiResource('guru', APIGuruController::class);
+
+Route::apiResource('siswa', APISiswaController::class);
+Route::apiResource('industri', APIIndustriController::class);
+Route::apiResource('pkl', APIPklController::class);
+Route::apiResource('user', APIUserController::class);
