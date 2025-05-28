@@ -9,13 +9,13 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 class SiswaSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Jalankan seeder database.
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');  // matikan foreign key checks
-        // Kosongkan tabel siswa dulu
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('siswa')->truncate();
+
         $siswa = [
             ["20388", "ABU BAKAR TSABIT GHUFRON", "L"],
             ["20389", "ADE RAFIF DANESWARA", "L"],
@@ -77,8 +77,8 @@ class SiswaSeeder extends Seeder
             ["20445", "REYQAL KHAIRULLAH RINDUWAN", "L"],
             ["20446", "REZA FARKIH", "L"],
             ["20447", "RIENTANIA WAFANISA SARWADITA", "P"],
-            ["20449", "ROBERTHO DARRELL", "L"],
             ["20448", "ROSYIDAH MUTHMAINNAH", "P"],
+            ["20449", "ROBERTHO DARRELL", "L"],
             ["20450", "SABIAN RAKA PRAMUDITYA", "L"],
             ["20451", "SALWA AZ-ZAHRA MIZAR", "P"],
             ["20452", "SHAFWAN ILHAM DZAKY", "L"],
@@ -97,15 +97,16 @@ class SiswaSeeder extends Seeder
                 'nis' => $s[0],
                 'nama' => $s[1],
                 'gender' => $s[2],
-                'kelas' => $index <= 35 ? 'A' : 'B', // Meidinna ke atas = A, Meylani ke bawah = B
+                'kelas' => $index <= 35 ? 'A' : 'B',
                 'alamat' => 'Yogyakarta',
                 'kontak' => '08' . rand(1000000000, 9999999999),
-                'email' => $s[0] . '@sija.com',
+                'email' => $s[0] . '@sija.com', // email mengikuti format nis@sija.com
                 'status_lapor_pkl' => false,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
         }
-         DB::statement('SET FOREIGN_KEY_CHECKS=1;');  // aktifkan lagi foreign key checks
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

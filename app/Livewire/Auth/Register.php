@@ -3,6 +3,7 @@
 namespace App\Livewire\Auth;
 
 use App\Models\User;
+use App\Models\Siswa;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,6 +21,9 @@ class Register extends Component
     public string $password = '';
 
     public string $password_confirmation = '';
+    protected $messages = [
+    'email.regex' => 'Email harus menggunakan domain @sija.com',
+    ];
 
     /**
      * Handle an incoming registration request.
@@ -28,7 +32,7 @@ class Register extends Component
     {
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class, 'regex:/@sija\.com$/i'],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
         ]);
 

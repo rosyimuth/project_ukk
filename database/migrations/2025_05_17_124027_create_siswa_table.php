@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('kelas', ['A', 'B']);
             $table->text('alamat');
             $table->string('kontak');
-            $table->string('email')->unique();
+            $table->string('email')->unique(); // email mengikuti nis
             $table->boolean('status_lapor_pkl')->default(false);
             $table->timestamps();
         });
