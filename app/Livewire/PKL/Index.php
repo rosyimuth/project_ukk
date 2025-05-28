@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Livewire\Pkl;
+namespace App\Livewire\PKL;
 
-use App\Models\Pkl;
+use App\Models\PKL;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,7 +15,7 @@ class Index extends Component
 
     public function render()
 {
-    $query = Pkl::with(['siswa', 'guru', 'industri'])->orderBy('created_at', 'asc');
+    $query = PKL::with(['siswa', 'guru', 'industri'])->orderBy('created_at', 'asc');
 
     if (!empty($this->search)) {
         $query->where(function ($query) {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Livewire\Pkl;
+namespace App\Livewire\PKL;
 
 use App\Models\Guru;
 use App\Models\Industri;
-use App\Models\Pkl;
+use App\Models\PKL;
 use App\Models\Siswa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -29,7 +29,7 @@ class Create extends Component
         }
 
         // Cek apakah sudah pernah lapor
-        $this->sudahLapor = Pkl::where('siswa_id', $this->siswa_id)->exists();
+        $this->sudahLapor = PKL::where('siswa_id', $this->siswa_id)->exists();
     }
 
     public function store()
@@ -46,7 +46,7 @@ class Create extends Component
 
     try {
         // Cek apakah siswa sudah lapor PKL
-        $exists = Pkl::where('siswa_id', $this->siswa_id)->exists();
+        $exists = PKL::where('siswa_id', $this->siswa_id)->exists();
 
         if ($exists) {
             DB::rollBack(); // batalkan transaksi
@@ -55,7 +55,7 @@ class Create extends Component
         }
 
         // Simpan data PKL
-        Pkl::create([
+        PKL::create([
             'siswa_id' => $this->siswa_id,
             'industri_id' => $this->industri_id,
             'guru_id' => $this->guru_id,

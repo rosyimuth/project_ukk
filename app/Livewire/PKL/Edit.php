@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Livewire\Pkl;
+namespace App\Livewire\PKL;
 
 use App\Models\Guru;
 use App\Models\Industri;
-use App\Models\Pkl;
+use App\Models\PKL;
 use App\Models\Siswa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +23,7 @@ class Edit extends Component
         $this->bukanSuperAdmin = (!Auth::user()->hasRole('super_admin'));
         $this->bolehHapus = Auth::user()->hasRole('super_admin');
 
-        $pkl = Pkl::findOrFail($id);
+        $pkl = PKL::findOrFail($id);
 
         $this->pkl_id      = $pkl->id;
         $this->siswa_id    = $pkl->siswa_id;
@@ -49,7 +49,7 @@ class Edit extends Component
 
         DB::beginTransaction();
         try {
-            Pkl::whereKey($this->pkl_id)->update([
+            PKL::whereKey($this->pkl_id)->update([
                 'siswa_id'    => $this->siswa_id,
                 'guru_id'     => $this->guru_id,
                 'industri_id' => $this->industri_id,
@@ -77,7 +77,7 @@ class Edit extends Component
 
         DB::beginTransaction();
         try {
-            Pkl::findOrFail($this->pkl_id)->delete();
+            PKL::findOrFail($this->pkl_id)->delete();
 
             DB::commit();
             session()->flash('success', 'Data PKL berhasil dihapus!');

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Livewire\Pkl;
+namespace App\Livewire\PKL;
 
-use App\Models\Pkl;
+use App\Models\PKL;
 use Livewire\Component;
 
 class Show extends Component
@@ -11,7 +11,7 @@ class Show extends Component
 
     public function mount($id)
     {
-        $this->pkl = Pkl::with(['siswa', 'guru', 'industri'])->findOrFail($id);
+        $this->pkl = PKL::with(['siswa', 'guru', 'industri'])->findOrFail($id);
     }
 
     public function render()
