@@ -66,8 +66,8 @@
                         <label for="perPage" class="text-sm font-medium">Tampilkan</label>
                         <select id="perPage" wire:model.live="perPage"
                             class="border border-gray-300 rounded-md px-5 py-2 text-sm focus:ring focus:border-blue-300 min-w-[110px]">
-                            <option value="3">3</option>
-                            <option value="6">6</option>
+                            <option value="4">4</option>
+                            <option value="8">8</option>
                             <option value="12">12</option>
                         </select>
                     </div>

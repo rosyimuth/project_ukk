@@ -11,7 +11,7 @@ class Index extends Component
     use WithPagination;
 
     public $search = '';
-    public $perPage = 3;
+    public $perPage = 4;
     public $foto_industri, $nama, $bidang_usaha, $alamat, $kontak, $email, $website;
 
     // Supaya nilai tetap di URL (opsional)
